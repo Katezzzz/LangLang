@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editEmail, editPassword, editName,editUserName,editLastName;
     Button btnSignIn, btnRegister;
 
-    String URL= "http://192.168.1.20/test-android/index.php";
+    String URL= "http://192.168.1.8/test-android/index.php";
 
     JSONParser jsonParser=new JSONParser();
 
@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 AttemptLogin attemptLogin= new AttemptLogin();
                 attemptLogin.execute(editUserName.getText().toString(),editPassword.getText().toString(),"","","");
-
 
             }
         });
@@ -135,10 +134,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if (result != null) {
                     Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
-                    Log.d("API123",result.getString("success"));
+
 int value=Integer.parseInt(result.getString("success"));
                     if(value==1){
-                        Intent intent = new Intent(getApplicationContext(), Panel.class);
+                        Intent intent = new Intent(getApplicationContext(), CourseChooseActivity.class);
+                        intent.putExtra("id", Integer.parseInt(result.getString("id")));
+
                         startActivity(intent);
                     }
                 } else {

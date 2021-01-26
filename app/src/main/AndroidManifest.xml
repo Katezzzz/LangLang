@@ -12,7 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LangLang"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CourseChooseActivity"></activity>
+        <activity android:name=".TestChooseActivity"></activity>
+        <activity android:name=".HomeworkList" />
+        <activity android:name=".LessonActivity" />
+        <activity android:name=".AllActivity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".PanelActivity" />
+        <activity android:name=".mainPanel.showLesson" />
+        <activity android:name=".CourseInfoActivity" />
+        <activity android:name=".SingToCourse" />
+        <activity android:name=".CourseChooseActivity" />
         <activity
             android:name=".Panel"
             android:label="@string/title_activity_panel"
